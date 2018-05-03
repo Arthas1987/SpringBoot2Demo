@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="data"></div>
+    <div id="example"></div>
+
+    <script>
+        var source = new EventSource('http://127.0.0.1:8080/stream/tweets');
+        var div = document.getElementById('example');
+        var data = document.getElementById('data');
+
+        source.onopen = function (event) {
+            div.innerHTML += '<p>Connection open ...</p>';
+        };
+
+        source.onerror = function (event) {
+            div.innerHTML += '<p>Connection close.</p>';
+        };
+
+        source.onmessage = function (event) {
+            data.innerHTML += ('<p>Data: ' + event.data + '</p>');
+        };
+
+    </script>
+</body>
+</html>
