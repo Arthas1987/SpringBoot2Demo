@@ -1,4 +1,4 @@
-package jp.test.exp.demo;
+package jp.test.exp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
