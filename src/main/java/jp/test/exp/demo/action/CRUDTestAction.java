@@ -35,6 +35,9 @@ public class CRUDTestAction {
         }
 
         target.setUserName(user.getUserName());
+
+        int i = 1;
+        Integer ii = new Integer(1);
         return userJpaRepository.save(target);
     }
 
